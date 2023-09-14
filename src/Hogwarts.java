@@ -3,7 +3,7 @@ public class Hogwarts {
     private int conjure;//свойство колдовать
     private int transgress;//свойство трансгрессировать
 
-    public Hogwarts(String name,int conjure, int transgress) {
+    public Hogwarts(String name, int conjure, int transgress) {
         this.name = name;
         this.conjure = conjure;
         this.transgress = transgress;
@@ -32,4 +32,7 @@ public class Hogwarts {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }
+
