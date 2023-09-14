@@ -6,8 +6,8 @@ public class Kogtervan extends Hogwarts {
 
 
 
-    public Kogtervan(int conjure, int transgress, int smartness, int wisdom, int wit,int creative) {
-        super(conjure, transgress);
+    public Kogtervan(String name,int conjure, int transgress, int smartness, int wisdom, int wit,int creative) {
+        super(name,conjure, transgress);
         this.smartness = smartness;
         this.wisdom = wisdom;
         this.wit = wit;
