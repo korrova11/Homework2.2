@@ -134,7 +134,7 @@ public class PrintService {
 
 
     }
-    public void printCompareFacult( Slizerin[] slizerins,String name1,String name2){
+    /*public void printCompareFacult( Slizerin[] slizerins,String name1,String name2){
         int power1=0,power2=0;
         int k1=0,k2=0;
 
@@ -161,7 +161,7 @@ public class PrintService {
         else System.out.println("Силы равны");
 
 
-    }
+    }*/
     public void printCompare( Hogwarts[] hogwarts,String name1,String name2){
 
         int power1=0,power2=0;

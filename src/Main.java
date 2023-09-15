@@ -1,7 +1,9 @@
 public class Main {
+
+
     public static void main(String[] args) {
         Hogwarts[] hogwarts = {
-                new Hogwarts("Гарри Поттер", 56, 72),
+                new Hogwarts("Гарри Поттер", 56,78),
                 new Hogwarts("Гермиона Грейнджер", 44,35),
                 new Hogwarts("Рон Уизли",37,42),
                 new Hogwarts("Драко Малфой",32,37),
@@ -35,18 +37,18 @@ public class Main {
                 new Kogtervan("Падма Патил",43,28,24,55,54,66),
                 new Kogtervan("Маркус Белби",65,21,76,39,53,43)
         };
-        PrintService printService = new PrintService();
-        printService.print(hogwarts);
-        printService.print(griffindor);
-        printService.print(pooffendies);
-        printService.print(kogtervans);
-        printService.print(slizerin);
-        printService.printCompareFacult(griffindor,"Гермиона Грейнджер","Гарри Поттер");
-        printService.printCompareFacult(pooffendies,"Седрик Диггори","Джастин Финч-Флетчли");
-        printService.printCompareFacult(kogtervans,"Чжоу Чанг","Маркус Белби");
-        printService.printCompareFacult(slizerin,"Грегори Гойл","Драко Малфой");
-        printService.printCompare(hogwarts,"Рон Уизли","Падма Патил");
 
 
-    }
+        hogwarts[0].print(hogwarts);
+        griffindor[0].print(griffindor);
+        pooffendies[0].print(pooffendies);
+        kogtervans[0].print(kogtervans);
+        slizerin[0].print(slizerin);
+        griffindor[0].printCompareFacult(griffindor,"Гермиона Грейнджер","Гарри Поттер");
+        pooffendies[0].printCompareFacult(pooffendies,"Седрик Диггори","Джастин Финч-Флетчли");
+        kogtervans[0].printCompareFacult(kogtervans,"Чжоу Чанг","Маркус Белби");
+        slizerin[0].printCompareFacult(slizerin,"Грегори Гойл","Драко Малфой");
+        hogwarts[0].printCompare(hogwarts,"Рон Уизли","Падма Патил");
+
+            }
 }
