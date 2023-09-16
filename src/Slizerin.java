@@ -1,5 +1,5 @@
 public class Slizerin extends Hogwarts{
-    public int s;
+
     private int trick;//хитрость
     private int resolute;//решительность
     private int ambitious;//амбициозность
@@ -54,43 +54,28 @@ public class Slizerin extends Hogwarts{
     public void setLustForPower(int lustForPower) {
         this.lustForPower = lustForPower;
     }
-    public static void print(Slizerin[] slizerins) {
-        System.out.println("Студенты факультета Слизерин");
-        for (int i = 0; i < slizerins.length; i++) {
-            Slizerin slizerin = slizerins[i];
-            System.out.println(slizerin.getName() + ", сила магии " + slizerin.getConjure()
-                    + ", расстояние трансгрессии " + slizerin.getTransgress() + ". Свойства характера: хитрость "
-                    + slizerin.getTrick() + ", решительность " + slizerin.getResolute() + ", амбициозность " + slizerin.getAmbitious()
-                    + " ,находчивость " + slizerin.getResourceful() +", жажда власти "+slizerin.getLustForPower());
-        }
-
+    @Override
+    public String toString() {
+        return "Студент факультета Пуффендуй " + getName() +
+                ": навык колдовать = " + getConjure() +
+                ", навык трансгрессии = " + getTransgress() +
+                ", хитрость = " + trick +
+                ", решительность = " + resolute +
+                ", амбициозность = " + ambitious +
+                ", находчивость = "  + resourceful +
+                ", жажда власти = " + lustForPower
+                ;
     }
-    public  void printCompareFacult( Slizerin[] slizerins,String name1,String name2){
-        int power1=0,power2=0;
-        int k1=0,k2=0;
-
-        for (int i = 0; i < slizerins.length; i++) {
-
-            if (slizerins[i].getName().equals(name1)) {
-                power1 = slizerins[i].getLustForPower() + slizerins[i].getResourceful() + slizerins[i].getTrick()
-                        +slizerins[i].getResolute()+slizerins[i].getAmbitious();
-                k1 = i;
-            }
-            if (slizerins[i].getName().equals(name2)) {
-                power2 = slizerins[i].getLustForPower() + slizerins[i].getResourceful() + slizerins[i].getTrick()
-                        +slizerins[i].getResolute()+slizerins[i].getAmbitious();
-                k2 = i;
-            }
+    public void printCompareFacult(Slizerin hogwarts2) {
+        if ((trick + resolute + ambitious + resourceful + lustForPower) > (hogwarts2.trick + hogwarts2.resolute + hogwarts2.ambitious
+                + hogwarts2.resourceful + hogwarts2.lustForPower)) {
+            System.out.println(getName() + " лучший Слизеринец, чем " +
+                    hogwarts2.getName());
+        } else {
+            System.out.println(hogwarts2.getName() + " лучший Слизеринец, чем  " +
+                    getName());
         }
-        if (power1>power2) {
-            System.out.println(slizerins[k1].getName() + " лучший Слизеринец, чем " +
-                    slizerins[k2].getName());
-        } else if (power2>power1) {
-            System.out.println(slizerins[k2].getName() + " лучший Слизеринец, чем " +
-                    slizerins[k1].getName());
-        }
-        else System.out.println("Силы равны");
-
-
     }
-}
+    }
+
+

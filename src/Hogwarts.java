@@ -1,4 +1,4 @@
-public class Hogwarts {
+public abstract class Hogwarts {
     private String name;
     private int conjure;//свойство колдовать
     private int transgress;//свойство трансгрессировать
@@ -10,6 +10,8 @@ public class Hogwarts {
         this.conjure = conjure;
         this.transgress = transgress;
     }
+    public Hogwarts(){}
+
 
     public int getConjure() {
         return conjure;
@@ -34,41 +36,24 @@ public class Hogwarts {
     public void setName(String name) {
         this.name = name;
     }
-    public void print(Hogwarts[] hogwarts) {
-        System.out.println("Студенты Хогвартса:");
-        for (int i = 0; i < hogwarts.length; i++) {
-            Hogwarts hogwart = hogwarts[i];
-            System.out.println(hogwart.getName() + ", сила магии " + hogwart.getConjure()
-                    + ", расстояние трансгрессии " + hogwart.getTransgress());
 
-        }
+    @Override
+    public String toString() {
+        return "Hogwarts{" +
+                "name='" + name + '\'' +
+                ", conjure=" + conjure +
+                ", transgress=" + transgress +
+                "};";
+
     }
 
-    public void printCompare(Hogwarts[] hogwarts, String name1, String name2) {
-
-        int power1 = 0, power2 = 0;
-        int k1 = 0, k2 = 0;
-
-        for (int i = 0; i < hogwarts.length; i++) {
-
-            if (hogwarts[i].getName().equals(name1)) {
-                power1 = hogwarts[i].getConjure() + hogwarts[i].getTransgress();
-                k1 = i;
-            }
-            if (hogwarts[i].getName().equals(name2)) {
-                power2 = hogwarts[i].getConjure() + hogwarts[i].getTransgress();
-                k2 = i;
-            }
-        }
-        if (power1 > power2) {
-            System.out.println(hogwarts[k1].getName() + " обладает большей мощностью магии, чем " +
-                    hogwarts[k2].getName());
-        } else if (power2 > power1) {
-            System.out.println(hogwarts[k2].getName() + " обладает большей мощностью магии, чем " +
-                    hogwarts[k1].getName());
-        } else System.out.println("Силы равны");
-
-
+    public void printCompare(Hogwarts hogwarts2) {
+        if((conjure + transgress) > (hogwarts2.conjure + hogwarts2.transgress))
+        { System.out.println(name + " обладает большей мощностью магии, чем  " +
+                        hogwarts2.name);}
+        else
+                System.out.println(hogwarts2.name + " обладает большей мощностью магии, чем  " +
+                        name);
     }
 
 }

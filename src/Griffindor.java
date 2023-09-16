@@ -11,6 +11,7 @@ public class Griffindor extends Hogwarts {
         this.honor = honor;
         this.bravery = bravery;
     }
+    public Griffindor (){}
 
     public int getNobility() {
         return nobility;
@@ -35,41 +36,29 @@ public class Griffindor extends Hogwarts {
     public void setBravery(int bravery) {
         this.bravery = bravery;
     }
-    public void print(Griffindor[] griffindors) {
-        System.out.println("Студенты факультета Гриффиндор");
-        for (int i = 0; i < griffindors.length; i++) {
-            Griffindor griffindor = griffindors[i];
-            System.out.println(griffindor.getName() + ", сила магии " + griffindor.getConjure()
-                    + ", расстояние трансгрессии " + griffindor.getTransgress() + ". Свойства характера: благородство "
-                    + griffindor.getNobility() + ", честь " + griffindor.getHonor() + ", храбрость " + griffindor.getBravery());
 
-        }
+
+    @Override
+    public String toString() {
+        return "Студент факультета Гриффиндор " +getName()+
+                ": навык колдовать = "+getConjure()+
+                ", навык трансгрессии = "+getTransgress()+
+                ", благородство = " + nobility +
+                ", честь = " + honor +
+                ", храбрость = " + bravery
+                ;
     }
-    public void printCompareFacult( Griffindor[] griffindors,String name1,String name2){
-        int power1=0,power2=0;
-        int k1=0,k2=0;
-
-        for (int i = 0; i < griffindors.length; i++) {
-
-            if (griffindors[i].getName().equals(name1)) {
-                power1 = griffindors[i].getNobility() + griffindors[i].getHonor() + griffindors[i].getBravery();
-                k1 = i;
-            }
-            if (griffindors[i].getName().equals(name2)) {
-                power2 = griffindors[i].getNobility() + griffindors[i].getHonor() + griffindors[i].getBravery();
-                k2 = i;
-            }
-        }
-        if (power1>power2) {
-            System.out.println(griffindors[k1].getName() + " лучший Гриффиндорец, чем " +
-                    griffindors[k2].getName());
-        } else if (power2>power1) {
-            System.out.println(griffindors[k2].getName() + " лучший Гриффиндорец, чем " +
-                    griffindors[k1].getName());
-        }
-        else System.out.println("Силы равны");
 
 
+    public void printCompareFacult(Griffindor hogwarts2){
+        if((nobility + honor+bravery) > (hogwarts2.nobility + hogwarts2.bravery+hogwarts2.honor))
+        { System.out.println(getName() + " лучший Гриффиндорец, чем " +
+                hogwarts2.getName());}
+        else
+        {System.out.println(hogwarts2.getName() + " лучший Гриффиндорец, чем  " +
+                    getName());}
     }
 
 }
+
+
